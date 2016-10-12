@@ -1,7 +1,6 @@
 class IndexController < ApplicationController
   def main
-    logger.debug('test')
-    FluentdLogger.new
+    FluentdLogger.location(uuid: 'hoge', longitude: 30, latitude: 30)
     render text: 'test'
   end
 end
