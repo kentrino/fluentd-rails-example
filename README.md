@@ -15,6 +15,7 @@ docker rm $(docker ps --all | grep fluentd_logger | awk '{print $1}') && docker 
 ```
 
 # Outline
-1. `fluentd-rails-sample/app/controllers/index_controller.rb#main`(`get '/'`) calls wrapper class of fluentd-logger. 
-2. The wrapper class is in `lib/fluentd_logger.rb` where it initializes fluentd logger and creates connection. This sample wrapper class implements a location logging.
-3. `Dockerfile` and `fluent.conf` are in `fluentd/`. 
+1. This sample uses `fluent-logger` rubygem.
+2. `fluentd-rails-sample/app/controllers/index_controller.rb#main`(`get '/'`) calls wrapper class of `fluent-logger`. 
+3. The wrapper class is in `lib/fluentd_logger.rb` where it initializes fluentd logger and creates connection. This sample wrapper class has a class method for location logging.
+4. `Dockerfile` and `fluent.conf` are in `fluentd/`. 
