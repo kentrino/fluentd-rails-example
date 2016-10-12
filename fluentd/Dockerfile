@@ -15,6 +15,9 @@ RUN apk --no-cache --update add \
     gem install oj && \
     gem install json && \
     gem install fluentd -v 0.12.29 && \
+
+    # S3プラグインをインストール
+    gem install fluent-plugin-s3 && \
     apk del build-base ruby-dev && \
     rm -rf /tmp/* /var/tmp/* /var/cache/apk/* /usr/lib/ruby/gems/*/cache/*.gem
 
